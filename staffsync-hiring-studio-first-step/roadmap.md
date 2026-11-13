@@ -1,0 +1,11 @@
+# Hiring Studio update
+- [x] Recreate the supplied My Requirements screenshot with working search and filters.
+- [x] Connect Post Requirement to the existing builder and verify desktop/mobile navigation.
+- [x] Adapt this exact robot with jointed introductory arm motion and animated visor expressions.
+- [x] Add the new exact robot and a staged arrival, greeting, pocket-card reveal with skip and no replay inside either flow.
+- [x] Verify desktop/mobile sequence, reduced motion, skip, and both complete hiring workflows.
+- [x] Remove the floating assistant and improvement path; rebalance the two remaining choices.
+- [x] Verify upload, AI creation, review, and desktop/mobile preview (no page errors; four existing tests passed).
+- [x] Obtain the exact user-supplied mascot.
+- [x] Add optimized actual 3D robot, greeting and reduced-motion treatment in the intro only.
+- [x] Verify desktop/mobile 3D rendering and both paths through Review & Publish; six tests pass, static reduced-motion frames match, and no page errors occur.

@@ -1,0 +1,9 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M32 4L58 20V44L32 60L6 44V20L32 4Z" fill="#4361EE"/>
+  <path d="M32 4L58 20V44L32 28V4Z" fill="#3A56D4"/>
+  <path d="M32 28L58 44L32 60V28Z" fill="#2D47B3"/>
+  <path d="M6 20L32 28V60L6 44V20Z" fill="#5B7DFF"/>
+  <path d="M32 4L6 20L32 28L58 20L32 4Z" fill="#6B8CFF"/>
+  <path d="M20 18L32 12L44 18L32 24L20 18Z" fill="white" opacity="0.15"/>
+  <path d="M32 24V40L44 34V18L32 24Z" fill="white" opacity="0.1"/>
+</svg>

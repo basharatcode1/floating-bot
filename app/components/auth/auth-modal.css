@@ -1,0 +1,883 @@
+/* ===== Auth Modal & Onboarding Design Tokens ===== */
+:root {
+  /* Dash variables fallback mapping for Select/shadcn components inside onboarding */
+  --dash-card-bg-solid: #FFFFFF;
+  --dash-card-border: #E2E8F0;
+  --dash-text-primary: #0F172A;
+  --dash-text-muted: #64748B;
+  --dash-card-hover: #F1F5F9;
+  --dash-divider: #F1F5F9;
+  --accent-primary: #005A9C;
+  --ambient: radial-gradient(1200px 600px at 10% -10%, oklch(0.95 0.03 240 / 0.7), transparent 60%), radial-gradient(900px 500px at 100% 0%, oklch(0.96 0.025 230 / 0.6), transparent 60%);
+  --shadow-card: 0 1px 2px oklch(0.4 0.05 250 / 0.04), 0 8px 24px -12px oklch(0.4 0.08 250 / 0.12);
+}
+
+.bg-ambient {
+  background-color: var(--background, #ffffff);
+  background-image: var(--ambient);
+  background-attachment: fixed;
+}
+
+.shadow-card {
+  box-shadow: 0 1px 2px oklch(0.4 0.05 250 / 0.04), 0 8px 24px -12px oklch(0.4 0.08 250 / 0.12);
+}
+
+[data-dashboard-theme="dark"] {
+  --dash-card-bg-solid: #111827;
+  --dash-card-border: #1E293B;
+  --dash-text-primary: #F1F5F9;
+  --dash-text-muted: #64748B;
+  --dash-card-hover: #1E293B;
+  --dash-divider: #1E293B;
+  --accent-primary: #38BDF8;
+}
+
+.auth-modal-root {
+  --ob-primary: #005A9C;
+  --ob-primary-hover: #004A82;
+  --ob-primary-light: #DBEAFE;
+  --ob-primary-lighter: #EFF6FF;
+  --ob-primary-ghost: #F0F7FF;
+
+  --ob-secondary: #06B6D4;
+  --ob-secondary-light: rgba(6, 182, 212, 0.15);
+
+  --ob-success: #198754;
+  --ob-success-light: rgba(25, 135, 84, 0.15);
+  --ob-warning: #F59E0B;
+  --ob-warning-light: rgba(245, 158, 11, 0.15);
+  --ob-error: #EF4444;
+  --ob-error-light: rgba(239, 68, 68, 0.15);
+
+  --ob-bg: #FFFFFF;
+  --ob-bg-alt: #F8FAFC;
+  --ob-bg-subtle: #E2E8F0;
+  --ob-card-bg: rgba(255, 255, 255, 0.72);
+  --ob-card-border: rgba(0, 0, 0, 0.08);
+  --ob-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --ob-card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --ob-card-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+
+  --ob-border: rgba(0, 0, 0, 0.1);
+  --ob-border-focus: rgba(0, 90, 156, 0.45);
+  --ob-divider: rgba(0, 0, 0, 0.06);
+
+  --ob-text: #0F172A;
+  --ob-text-secondary: #334155;
+  --ob-text-muted: #64748B;
+  --ob-text-placeholder: #94A3B8;
+  --ob-text-on-primary: #FFFFFF;
+
+  --ob-radius: 20px;
+  --ob-radius-sm: 12px;
+  --ob-radius-xs: 8px;
+
+  --ob-transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --ob-transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--ob-text);
+}
+
+.auth-modal-root.dark-theme,
+.dark-theme .auth-modal-root,
+.dark-theme {
+  --ob-primary: #005A9C;
+  --ob-primary-hover: #004A82;
+  --ob-primary-light: rgba(0, 90, 156, 0.25);
+  --ob-primary-lighter: rgba(0, 90, 156, 0.18);
+  --ob-primary-ghost: rgba(0, 90, 156, 0.1);
+
+  --ob-secondary: #06B6D4;
+  --ob-secondary-light: rgba(6, 182, 212, 0.2);
+
+  --ob-success: #198754;
+  --ob-success-light: rgba(25, 135, 84, 0.2);
+  --ob-warning: #F59E0B;
+  --ob-warning-light: rgba(245, 158, 11, 0.2);
+  --ob-error: #EF4444;
+  --ob-error-light: rgba(239, 68, 68, 0.2);
+
+  --ob-bg: #0F172A;
+  --ob-bg-alt: #1E293B;
+  --ob-bg-subtle: #334155;
+  --ob-card-bg: rgba(255, 255, 255, 0.04);
+  --ob-card-border: rgba(255, 255, 255, 0.12);
+  --ob-card-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --ob-card-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.7);
+
+  --ob-border: rgba(255, 255, 255, 0.15);
+  --ob-border-focus: rgba(129, 140, 248, 0.7);
+  --ob-divider: rgba(255, 255, 255, 0.1);
+
+  --ob-text: #FFFFFF;
+  --ob-text-secondary: #F1F5F9;
+  --ob-text-muted: #94A3B8;
+  --ob-text-placeholder: #64748B;
+  --ob-text-on-primary: #FFFFFF;
+  color: #FFFFFF;
+}
+
+/* Glassmorphism Card Shimmer */
+.signup-card-shimmer {
+  position: absolute;
+  top: 0;
+  left: 44px;
+  right: 44px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.4), rgba(6, 182, 212, 0.3), transparent);
+}
+
+/* Segmented progress bar */
+.signup-progress-bar {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 24px;
+  align-items: center;
+  width: 100%;
+}
+
+.signup-pseg {
+  flex: 1;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.signup-pseg.completed {
+  background: var(--ob-success);
+}
+
+.signup-pseg.active {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.signup-pseg.active::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--ob-primary), var(--ob-secondary));
+  border-radius: 2px;
+  animation: pf 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes pf {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Glassmorphic inputs */
+.signup-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9px;
+  font-size: 12px;
+  color: var(--ob-text);
+  outline: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+}
+
+.signup-input:focus {
+  border-color: var(--ob-border-focus);
+  background: rgba(99, 102, 241, 0.08);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.signup-input.err {
+  border-color: rgba(239, 68, 68, 0.45);
+}
+
+/* Premium Glass Container for Fields and Actions */
+.signup-fields-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.05),
+    0 8px 32px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 14px;
+  padding: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.signup-fields-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.1) 80%, transparent);
+}
+
+
+/* Premium Buttons */
+.signup-btn-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: linear-gradient(135deg, var(--ob-primary), var(--ob-primary-hover));
+  border: none;
+  border-radius: 9px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.12s, opacity 0.18s;
+  letter-spacing: -0.01em;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.25);
+}
+
+.signup-btn-main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent);
+  pointer-events: none;
+}
+
+.signup-btn-main:hover {
+  background: var(--ob-primary-hover);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35);
+}
+
+.signup-btn-main:active {
+  transform: scale(0.985);
+}
+
+.signup-btn-main.locked {
+  opacity: 0.28;
+  pointer-events: none;
+  box-shadow: none;
+}
+
+.signup-btn-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9px;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ob-text-muted);
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color 0.18s, color 0.18s, background 0.18s;
+  white-space: nowrap;
+}
+
+.signup-btn-back:hover {
+  border-color: rgba(255, 255, 255, 0.13);
+  color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Glass role cards */
+.signup-role-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 20px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color 0.18s, background 0.18s, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.signup-role-card:hover {
+  border-color: rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.signup-role-card.on {
+  border-color: rgba(99, 102, 241, 0.45);
+  background: rgba(99, 102, 241, 0.06);
+}
+
+.signup-role-radio {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.18s;
+  flex-shrink: 0;
+}
+
+.signup-role-card.on .signup-role-radio {
+  border-color: var(--ob-primary);
+}
+
+.signup-role-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ob-primary);
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.14s, transform 0.14s;
+}
+
+.signup-role-card.on .signup-role-dot {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* OTP Digit Boxes */
+.otp-digit-box {
+  caret-color: var(--ob-primary);
+}
+
+.otp-digit-box:focus {
+  border-color: var(--ob-primary);
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.dark-theme .otp-digit-box {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  caret-color: #FFFFFF !important;
+}
+
+.dark-theme .otp-digit-box:focus {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Step indicator label meta */
+.signup-step-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.signup-step-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--ob-primary);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.signup-step-counter {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ob-text-muted);
+}
+
+/* Override Browser Autofill styles (light modal fallback) */
+.auth-modal-root:not(.dark-theme) input:-webkit-autofill,
+.auth-modal-root:not(.dark-theme) input:-webkit-autofill:hover, 
+.auth-modal-root:not(.dark-theme) input:-webkit-autofill:focus, 
+.auth-modal-root:not(.dark-theme) input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #0F172A !important;
+  caret-color: #0F172A;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Browser Autofill for Dark Theme & Glass Inputs (Pure White Text) */
+.auth-modal-root.dark-theme input:-webkit-autofill,
+.auth-modal-root.dark-theme input:-webkit-autofill:hover, 
+.auth-modal-root.dark-theme input:-webkit-autofill:focus, 
+.auth-modal-root.dark-theme input:-webkit-autofill:active,
+.glass-minimal-input:-webkit-autofill,
+.glass-minimal-input:-webkit-autofill:hover, 
+.glass-minimal-input:-webkit-autofill:focus,
+.glass-minimal-input:-webkit-autofill:active {
+  -webkit-text-fill-color: #FFFFFF !important;
+  -webkit-box-shadow: 0 0 0 1000px #0b0f19 inset !important;
+  caret-color: #FFFFFF !important;
+  transition: background-color 5000000s ease-in-out 0s, color 5000000s ease-in-out 0s !important;
+}
+
+/* Style the Dialog close button specifically for Onboarding Modal to sit on top of sticky header */
+.auth-modal-root > button {
+  z-index: 50 !important;
+  color: var(--ob-text-muted) !important;
+}
+
+.auth-modal-root > button:hover {
+  color: var(--ob-text) !important;
+  background-color: var(--ob-bg-subtle) !important;
+}
+
+/* Ensure native select options inside onboarding modal have dark background and high-contrast text */
+.auth-modal-root select option {
+  background-color: #F1F5F9 !important;
+  color: #F1F5F9 !important;
+}
+
+.signup-btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ob-text);
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color 0.18s, background 0.18s, transform 0.12s;
+  width: 100%;
+}
+
+.signup-btn-google:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.signup-btn-google:active {
+  transform: scale(0.99);
+}
+
+.signup-btn-google:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.auth-divider-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.auth-divider-text {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--ob-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ===== Glassmorphism Login Card & Aurora Glow Theme ===== */
+.glass-auth-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%), rgba(8, 14, 26, 0.35);
+  backdrop-filter: blur(36px) saturate(200%);
+  -webkit-backdrop-filter: blur(36px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  box-shadow: 
+    0 30px 70px -15px rgba(0, 0, 0, 0.75),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.25),
+    inset 0 0 20px 0 rgba(255, 255, 255, 0.02);
+  border-radius: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .glass-auth-card {
+    border-radius: 32px;
+  }
+}
+
+.glass-auth-card::before {
+  display: none !important;
+}
+
+/* Minimalist Underline / Clean Input exactly matching reference image */
+.glass-input-wrapper {
+  position: relative;
+  border-bottom: 1px solid var(--strength-color, rgba(255, 255, 255, 0.22));
+  transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s;
+  background: transparent !important;
+}
+
+.glass-input-wrapper:hover {
+  border-bottom-color: var(--strength-color, rgba(255, 255, 255, 0.45));
+}
+
+.glass-input-wrapper:focus-within {
+  border-bottom-color: var(--strength-color, var(--accent-success, #198754));
+  box-shadow: 0 1px 0 0 var(--strength-color, var(--accent-success, #198754));
+}
+
+.glass-input-wrapper.err {
+  border-bottom-color: #EF4444 !important;
+  box-shadow: 0 1px 0 0 #EF4444 !important;
+}
+
+.glass-input-wrapper.has-strength {
+  border-bottom-color: var(--strength-color) !important;
+}
+
+.glass-input-wrapper.has-strength:focus-within {
+  border-bottom-color: var(--strength-color) !important;
+  box-shadow: 0 1px 0 0 var(--strength-color) !important;
+}
+
+.glass-minimal-input {
+  width: 100% !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 4px 0 5px 0 !important;
+  font-size: 13px !important;
+  color: #FFFFFF !important;
+  outline: none !important;
+  box-shadow: none !important;
+  height: auto !important;
+}
+
+.glass-minimal-input::placeholder {
+  color: rgba(148, 163, 184, 0.45) !important;
+  font-size: 12.5px;
+}
+
+/* Completely transparent autofill: remove any browser gray background */
+.glass-minimal-input:-webkit-autofill,
+.glass-minimal-input:-webkit-autofill:hover, 
+.glass-minimal-input:-webkit-autofill:focus,
+.glass-minimal-input:-webkit-autofill:active {
+  -webkit-text-fill-color: #FFFFFF !important;
+  caret-color: #FFFFFF !important;
+  transition: background-color 5000000s ease-in-out 0s, color 5000000s ease-in-out 0s !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
+/* Glass Pill Buttons */
+.glass-pill-btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 44px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #6366F1 0%, #3B82F6 50%, #06B6D4 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow: 0 4px 24px -4px rgba(99, 102, 241, 0.45);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-pill-btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.glass-pill-btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px -2px rgba(99, 102, 241, 0.65);
+  filter: brightness(1.08);
+}
+
+.glass-pill-btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+  filter: brightness(0.98);
+}
+
+.glass-pill-btn-primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.glass-auth-card .glass-pill-btn-primary {
+  background: linear-gradient(105deg, #080B10 0%, #005A9C 48%, #168FE5 100%);
+  box-shadow: 0 4px 20px -2px rgba(0, 90, 156, 0.45);
+}
+
+.glass-auth-card .glass-pill-btn-primary:hover:not(:disabled) {
+  box-shadow: 0 8px 28px -2px rgba(22, 143, 229, 0.65);
+}
+
+/* Sign Up / Login Button - Exact Glassmorphism Design */
+.signup-button,
+.glass-btn {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+  height: 36px !important;
+  min-height: 36px !important;
+  padding: 0 16px !important;
+  border: 1.5px solid transparent !important;
+  border-radius: 9999px !important;
+  cursor: pointer !important;
+  color: #fff !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.2px !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35) !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+  text-decoration: none !important;
+
+  /* Gradient fill (white-grey -> dark -> deep blue -> bright blue), semi transparent */
+  background:
+    linear-gradient(115deg,
+      rgba(255, 255, 255, 0.38) 0%,
+      rgba(255, 255, 255, 0.22) 10%,
+      rgba(180, 205, 235, 0.15) 20%,
+      rgba(15, 25, 40, 0.35) 35%,
+      rgba(5, 45, 100, 0.65) 55%,
+      rgba(0, 95, 190, 0.82) 76%,
+      rgba(0, 150, 255, 0.95) 100%) padding-box,
+    /* Gradient border */
+    linear-gradient(90deg,
+      #ffffff 0%,
+      rgba(180, 210, 255, 0.8) 25%,
+      #1ea0ff 55%,
+      #00b3ff 100%) border-box !important;
+
+  background-origin: border-box !important;
+  background-clip: padding-box, border-box !important;
+
+  backdrop-filter: blur(14px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(160%) !important;
+
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 0 12px rgba(0, 150, 255, 0.45),     /* neon glow */
+    0 0 28px rgba(0, 110, 255, 0.25),     /* wide halo */
+    0 4px 14px rgba(0, 0, 0, 0.45),       /* depth */
+    inset 0 1px 1px rgba(255, 255, 255, 0.65),   /* top highlight */
+    inset 0 -1px 2px rgba(0, 170, 255, 0.6),     /* bottom blue rim */
+    inset 0 0 16px rgba(0, 140, 255, 0.18) !important;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease !important;
+}
+
+/* Glossy top sheen */
+.signup-button::before,
+.glass-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0) 48%),
+    linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.10) 38%, transparent 52%);
+  pointer-events: none;
+}
+
+/* Curved light sweep on the bottom-right */
+.signup-button::after,
+.glass-btn::after {
+  content: "";
+  position: absolute;
+  right: -8%;
+  bottom: -60%;
+  width: 60%;
+  height: 120%;
+  z-index: 1;
+  border-radius: 50%;
+  border-top: 1.5px solid rgba(120, 200, 255, 0.35);
+  background: radial-gradient(ellipse at 50% 0%, rgba(80, 180, 255, 0.25), transparent 65%);
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+
+.signup-button > *,
+.glass-btn > * {
+  position: relative;
+  z-index: 2;
+}
+
+.signup-button > span:not(.arrow):not(.icon),
+.signup-button span:not(.arrow):not(.icon),
+.signup-button .label,
+.glass-btn .label {
+  position: relative;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #FFFFFF !important;
+  line-height: 1 !important;
+}
+
+/* Arrow / Icon */
+.signup-button .arrow,
+.signup-button .icon,
+.glass-btn .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff !important;
+  font-size: 13px !important;
+  line-height: 1 !important;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+  margin-left: 2px;
+}
+
+.signup-button .arrow svg,
+.signup-button .icon svg,
+.glass-btn .icon svg {
+  width: 14px;
+  height: 14px;
+  stroke: #fff;
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Hover Effect */
+.signup-button:hover,
+.signup-button:hover:not(:disabled),
+.glass-btn:hover {
+  transform: translateY(-1px) !important;
+  filter: brightness(1.12) !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 0 18px rgba(0, 170, 255, 0.65),
+    0 0 38px rgba(0, 120, 255, 0.35),
+    0 6px 20px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.75),
+    inset 0 -1px 2px rgba(0, 190, 255, 0.8),
+    inset 0 0 24px rgba(0, 150, 255, 0.28) !important;
+}
+
+.signup-button:hover .arrow,
+.signup-button:hover .icon,
+.glass-btn:hover .icon {
+  transform: translateX(4px);
+}
+
+/* Click Effect */
+.signup-button:active,
+.signup-button:active:not(:disabled),
+.glass-btn:active {
+  transform: translateY(0) scale(0.99) !important;
+}
+
+/* Keyboard Accessibility */
+.signup-button:focus-visible,
+.glass-btn:focus-visible {
+  outline: 2px solid rgba(120, 200, 255, 0.9) !important;
+  outline-offset: 3px !important;
+}
+
+/* Disabled State */
+.signup-button:disabled,
+.glass-btn:disabled {
+  opacity: 0.55 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: 0 4px 12px rgba(0, 90, 156, 0.25) !important;
+}
+
+.glass-pill-btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 44px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 13px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-pill-btn-google:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.11);
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.glass-pill-btn-google:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Glowing Aurora Wave Animations */
+@keyframes auroraPulse {
+  0%, 100% {
+    opacity: 0.65;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.05) rotate(2deg);
+  }
+}
+
+@keyframes auroraSwoop {
+  0%, 100% {
+    transform: translate(0, 0) rotate(-12deg);
+  }
+  50% {
+    transform: translate(25px, -20px) rotate(-9deg);
+  }
+}
+
+.animate-aurora-pulse {
+  animation: auroraPulse 10s ease-in-out infinite;
+}
+
+.animate-aurora-swoop {
+  animation: auroraSwoop 14s ease-in-out infinite;
+}
+
