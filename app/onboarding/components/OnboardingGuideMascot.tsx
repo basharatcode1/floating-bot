@@ -9,7 +9,7 @@ import React, {
   useSyncExternalStore,
 } from "react";
 import { motion } from "framer-motion";
-import { AlertCircle, Lightbulb, X } from "lucide-react";
+import { Lightbulb, X } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
 import {
   StrobiAvatar,
@@ -473,10 +473,6 @@ export function OnboardingGuideMascot({
   }, [activeField, isMobile, computeCoords]);
 
   const hasError = Boolean(activeField && errors?.[activeField]);
-  const errorMessage =
-    activeField && typeof errors?.[activeField]?.message === "string"
-      ? errors[activeField]?.message
-      : undefined;
 
   const isGuiding = Boolean(activeField && guidance);
   const avatarAnimation: StrobiAnimation = isGuiding
@@ -548,20 +544,6 @@ export function OnboardingGuideMascot({
             <p className="text-xs text-slate-700 leading-snug mt-0.5">
               {guidance.tip}
             </p>
-            {guidance.example && (
-              <p className="mt-1 text-[11px] text-slate-500">
-                Example:{" "}
-                <span className="font-mono text-slate-700">
-                  {guidance.example}
-                </span>
-              </p>
-            )}
-            {hasError && (
-              <p className="mt-1.5 flex items-start gap-1 text-[11px] font-medium text-rose-700 bg-rose-50 border border-rose-200 rounded-lg px-2 py-1 leading-snug">
-                <AlertCircle className="h-3.5 w-3.5 shrink-0 mt-0.5 text-rose-600" />
-                <span>{errorMessage || "Please enter a valid value"}</span>
-              </p>
-            )}
           </div>
 
           <Button
@@ -727,22 +709,6 @@ export function OnboardingGuideMascot({
                 <p className="mt-1 text-xs leading-snug text-slate-700 break-words">
                   {guidance.tip}
                 </p>
-
-                {guidance.example && (
-                  <p className="mt-1.5 text-[11px] text-slate-500">
-                    Example:{" "}
-                    <span className="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-[10px] text-slate-700">
-                      {guidance.example}
-                    </span>
-                  </p>
-                )}
-
-                {hasError && (
-                  <p className="mt-2 flex items-start gap-1.5 text-[11px] font-medium text-rose-700 bg-rose-50 border border-rose-200/80 rounded-lg px-2.5 py-1.5 leading-snug">
-                    <AlertCircle className="h-3.5 w-3.5 shrink-0 mt-0.5 text-rose-600" />
-                    <span>{errorMessage || "Please correct this field"}</span>
-                  </p>
-                )}
               </motion.div>
             )}
           </div>
